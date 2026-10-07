@@ -1,0 +1,3 @@
+CREATE TABLE public.editing_requests (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), created_at timestamptz NOT NULL DEFAULT now(), package text NOT NULL, full_name text NOT NULL, company text NOT NULL DEFAULT '', email text NOT NULL, phone text NOT NULL, photo_count integer NOT NULL, editing_type text NOT NULL, instructions text NOT NULL DEFAULT '', turnaround text NOT NULL, files jsonb NOT NULL DEFAULT '[]'::jsonb);
+GRANT ALL ON public.editing_requests TO service_role;
+ALTER TABLE public.editing_requests ENABLE ROW LEVEL SECURITY;
