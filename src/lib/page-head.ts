@@ -1,0 +1,1 @@
+export function pageHead(title:string,description:string){return {meta:[{title:`${title} — 8pix Creative`},{name:'description',content:description},{property:'og:title',content:`${title} — 8pix Creative`},{property:'og:description',content:description},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}}

@@ -8,3 +8,8 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## App architecture
+- Keep shared website sections in browser-safe components and give shareable sections separate TanStack leaf routes, so navigation and page metadata remain consistent.
+- Editing requests use a validated public write-only server function and private Cloud storage; visitors never receive read access to submissions or upload paths.
+- Keep package and contact content in a shared browser-safe module, so selection and request summaries use one source of truth.
