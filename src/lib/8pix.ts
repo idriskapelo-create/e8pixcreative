@@ -22,6 +22,9 @@ export const requestSchema = z.object({
  editing_type:z.enum(['HDR / standard enhancement','Interior editing','Exterior editing','Day-to-dusk','Virtual staging','Mixed / custom workflow']),
  instructions:z.string().trim().max(3000),
  turnaround:z.enum(['24–48 hours','24 hours','Priority','Flexible']),
+}).superRefine((values,context)=>{
+ const pkg=packages.find(p=>p.id===values.package);
+ if(pkg&&values.photo_count>pkg.photos)context.addIssue({code:z.ZodIssueCode.custom,path:['photo_count'],message:`This package includes up to ${pkg.photos} photos. Choose Custom request for a larger set.`});
 });
 export function validateFiles(files:File[]) {
  if(files.length>201) throw new Error('Please upload up to 200 photos and one reference image, or share a folder link for larger sets.');
