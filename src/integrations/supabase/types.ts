@@ -59,12 +59,61 @@ export type Database = {
         }
         Relationships: []
       }
+      portfolio_work: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          id: string
+          image_path: string
+          owner_id: string
+          title: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description?: string
+          id?: string
+          image_path: string
+          owner_id?: string
+          title: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string
+          id?: string
+          image_path?: string
+          owner_id?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: string
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: string
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      claim_studio_owner: { Args: never; Returns: boolean }
+      is_studio_owner: { Args: never; Returns: boolean }
     }
     Enums: {
       [_ in never]: never

@@ -8,6 +8,13 @@
       "when": 1791367021899,
       "tag": "0000_create_editing_requests",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791465863748,
+      "tag": "0001_create_owner_portfolio",
+      "breakpoints": true
     }
   ]
 }
