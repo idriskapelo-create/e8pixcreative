@@ -6,3 +6,5 @@
 - [ ] Add owner-only completed-work publishing and removal.
 - [ ] Show new completed work in the public gallery.
 - [ ] Simplify navigation and verify desktop/mobile flows.
+- [ ] Replace default browser icon with the existing 8pix brand mark.
+- [ ] Request badge removal and republish navigation changes.
