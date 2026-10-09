@@ -70,3 +70,15 @@
 @media(max-width:760px){.hero-grid{grid-template-columns:minmax(0,1fr)}.hero-grid>div{min-width:0}.hero-actions{flex-wrap:wrap;gap:8px}.hero h1{font-size:70px}.hero-art{max-width:100%}.photo-caption{right:0}.hero-art img{padding-right:12px}.request-summary{flex-wrap:wrap}.request-summary select{max-width:100%}}
 @media(max-width:360px){.hero h1{font-size:60px}.form-grid{grid-template-columns:1fr}.package-features{grid-template-columns:1fr}.stats{gap:24px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-grid{animation:none}}
+
+/* Navigation remains available while browsing long pages. */
+.studio-header{position:sticky;top:0;z-index:40;background:var(--background);border-bottom:1px solid var(--border)}
+.nav-links{gap:22px}.nav-links a{padding-block:12px}.nav-links a.active{border-bottom:1px solid var(--primary)}
+.mobile-nav a{padding-block:9px;font-size:12px}.mobile-nav a.active{color:var(--primary)}
+.mobile-nav .studio-button{margin-top:6px}.footer-links{flex-wrap:wrap;gap:12px 20px}
+.skip-link{position:fixed;top:8px;left:16px;z-index:60;padding:12px 18px;background:var(--primary);color:var(--primary-foreground);transform:translateY(-160%)}
+.skip-link:focus{transform:translateY(0)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--primary);outline-offset:4px}
+#main-content:focus{outline:none}
+@media(max-width:1000px) and (min-width:761px){.nav-links{gap:12px}.site-header{gap:14px}.header-quote{padding-inline:12px}}
+@media(max-width:760px){.mobile-nav{max-height:calc(100dvh - 78px);overflow-y:auto}.footer-links{width:100%}}

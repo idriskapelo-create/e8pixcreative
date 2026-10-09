@@ -3,6 +3,10 @@
 - [x] Add packages, add-ons, custom requests and all contact links.
 - [x] Store editing requests with private photo uploads and WhatsApp handoff.
 - [x] Verify website, package selections, uploads and private submission storage.
-- [ ] Add owner-only completed-work publishing and removal.
-- [ ] Show new completed work in the public gallery.
-- [ ] Simplify navigation and verify desktop/mobile flows.
+- [ ] Add owner-only completed-work publishing and removal (deferred from the earlier request; not part of this branding update).
+- [ ] Show new completed work in the public gallery (depends on the deferred work publishing page).
+- [x] Simplify navigation and verify desktop/mobile flows.
+- [x] Replace default browser icon with the existing 8pix brand mark.
+- [x] Request badge removal (refused: requires editor access on Pro or higher).
+- [ ] Hide Lovable badge (blocked by plan/permissions).
+- [x] Prepare verified navigation changes for the requested republication.

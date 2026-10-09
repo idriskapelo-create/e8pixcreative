@@ -13,3 +13,4 @@
 - Keep shared website sections in browser-safe components and give shareable sections separate TanStack leaf routes, so navigation and page metadata remain consistent.
 - Editing requests use a validated public write-only server function and private Cloud storage; visitors never receive read access to submissions or upload paths.
 - Keep package and contact content in a shared browser-safe module, so selection and request summaries use one source of truth.
+- Keep primary page links shared between desktop and mobile navigation, with secondary information in the footer, so navigation remains consistent.
