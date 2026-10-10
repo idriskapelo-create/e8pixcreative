@@ -1,1 +1,49 @@
-export function pageHead(title:string,description:string){return {meta:[{title:`${title} — 8pix Creative`},{name:'description',content:description},{property:'og:title',content:`${title} — 8pix Creative`},{property:'og:description',content:description},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}}
+import { packages } from './8pix';
+
+export const SITE_URL = 'https://e8pixcreative.lovable.app';
+
+type JsonLd = Record<string, unknown>;
+
+export function pageHead(title: string, description: string, path = '/', jsonLd: JsonLd[] = []) {
+  const url = `${SITE_URL}${path === '/' ? '/' : path}`;
+  const fullTitle = `${title} — 8pix Creative`;
+  return {
+    meta: [
+      { title: fullTitle },
+      { name: 'description', content: description },
+      { property: 'og:title', content: fullTitle },
+      { property: 'og:description', content: description },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: url },
+      { name: 'twitter:card', content: 'summary_large_image' },
+    ],
+    links: [{ rel: 'canonical', href: url }],
+    scripts: jsonLd.map((data) => ({ type: 'application/ld+json', children: JSON.stringify(data) })),
+  };
+}
+
+const provider = { '@type': 'Organization', name: '8pix Creative', url: SITE_URL };
+
+export const servicesJsonLd: JsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Real estate photo editing',
+  provider,
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Property photo editing services',
+    itemListElement: ['Interior editing', 'Exterior enhancement', 'Day-to-dusk editing'].map((name) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name },
+    })),
+  },
+};
+
+export const packagesJsonLd: JsonLd[] = packages.map((p) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: `${p.name} real estate photo editing package`,
+  description: `Up to ${p.photos} edited photos, ${p.removal} object removals, ${p.dusk} day-to-dusk edits, ${p.revisions} revision round(s), ${p.turnaround} turnaround. Best for ${p.best.toLowerCase()}.`,
+  brand: { '@type': 'Brand', name: '8pix Creative' },
+  offers: { '@type': 'Offer', price: p.price, priceCurrency: 'USD', url: `${SITE_URL}/packages`, availability: 'https://schema.org/InStock' },
+}));
