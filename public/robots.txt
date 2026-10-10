@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://e8pixcreative.lovable.app/sitemap.xml
