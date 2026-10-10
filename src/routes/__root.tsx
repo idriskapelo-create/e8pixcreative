@@ -75,17 +75,13 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  staticData: { sitemap: false },
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "8pix Creative — Property visuals, sharpened" },
-      { name: "description", content: "Professional real estate photo editing from 8pix Creative." },
       { name: "author", content: "8pix Creative" },
-      { property: "og:title", content: "8pix Creative — Property visuals, sharpened" },
-      { property: "og:description", content: "Professional real estate photo editing from 8pix Creative." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:site_name", content: "8pix Creative" },
 
     ],
     links: [
