@@ -4,6 +4,7 @@ export const packages = [
  {id:'professional', name:'Professional', price:60, photos:100, removal:10, dusk:5, revisions:2, turnaround:'24 hours', best:'Regular workflows'},
  {id:'premium', name:'Premium', price:120, photos:200, removal:20, dusk:10, revisions:2, turnaround:'Priority', best:'Agencies / high volume'},
 ] as const;
+export const WORK_EMAIL = '8pixcreative@gmail.com';
 export const socials = [
  {name:'WhatsApp',url:'https://wa.me/254742602830'},
  {name:'Facebook',url:'https://www.facebook.com/share/1bJbVxWGnj/'},
