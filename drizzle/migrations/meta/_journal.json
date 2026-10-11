@@ -15,6 +15,13 @@
       "when": 1791465863748,
       "tag": "0001_create_owner_portfolio",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791715895181,
+      "tag": "0002_owner_email_and_portfolio_storage",
+      "breakpoints": true
     }
   ]
 }
