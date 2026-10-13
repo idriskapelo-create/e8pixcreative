@@ -21,4 +21,10 @@ describe('8pix editing package rules',()=>{
  it('preserves each requested add-on price',()=>{
   expect(addons.map(a=>a[1])).toEqual(['$0.60 / image','$3 / image','$3–$8 / image','$5–$15 / image','$10–$20 / image','+30%']);
  });
+});import { packagesJsonLd } from '@/lib/page-head';
+describe('package structured data',()=>{
+ it('has one Product per package, each with an image and the 8pixcreatives.org offer URL',()=>{
+  expect(packagesJsonLd).toHaveLength(3);
+  for(const p of packagesJsonLd as any[]){expect(p.image).toMatch(/^https:\/\/.+\.jpg$/);expect(p.offers.url).toBe('https://8pixcreatives.org/packages');}
+ });
 });
