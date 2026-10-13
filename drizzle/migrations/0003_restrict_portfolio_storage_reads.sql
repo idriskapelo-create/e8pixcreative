@@ -1,0 +1,2 @@
+DROP POLICY IF EXISTS "Public views portfolio photos" ON storage.objects;
+CREATE POLICY "Owner views portfolio photos" ON storage.objects FOR SELECT TO authenticated USING (bucket_id='portfolio-work' AND public.is_studio_owner() AND (storage.foldername(name))[1]=auth.uid()::text);
