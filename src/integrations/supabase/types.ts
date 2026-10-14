@@ -66,6 +66,7 @@ export type Database = {
           description: string
           id: string
           image_path: string
+          media_type: string
           owner_id: string
           title: string
         }
@@ -75,6 +76,7 @@ export type Database = {
           description?: string
           id?: string
           image_path: string
+          media_type?: string
           owner_id?: string
           title: string
         }
@@ -84,6 +86,7 @@ export type Database = {
           description?: string
           id?: string
           image_path?: string
+          media_type?: string
           owner_id?: string
           title?: string
         }
