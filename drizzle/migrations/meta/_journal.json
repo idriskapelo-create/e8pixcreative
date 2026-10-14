@@ -29,6 +29,13 @@
       "when": 1791892461165,
       "tag": "0003_restrict_portfolio_storage_reads",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1791983260168,
+      "tag": "0004_portfolio_media_type",
+      "breakpoints": true
     }
   ]
 }

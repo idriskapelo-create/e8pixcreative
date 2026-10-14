@@ -1,0 +1,1 @@
+ALTER TABLE public.portfolio_work ADD COLUMN IF NOT EXISTS media_type text NOT NULL DEFAULT 'photos' CHECK (media_type IN ('photos','videos','floor-plans','panorama'));
