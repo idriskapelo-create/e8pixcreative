@@ -82,3 +82,26 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--primary);outline-of
 #main-content:focus{outline:none}
 @media(max-width:1000px) and (min-width:761px){.nav-links{gap:12px}.site-header{gap:14px}.header-quote{padding-inline:12px}}
 @media(max-width:760px){.mobile-nav{max-height:calc(100dvh - 78px);overflow-y:auto}.footer-links{width:100%}}
+
+/* Curated gallery: folder filters, enlarged viewer, video showcase */
+.filter-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.filter-chip{border:1px solid var(--border);background:transparent;color:var(--muted-foreground);padding:9px 16px;font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:1.5px;border-radius:0}
+.filter-chip:hover{color:var(--foreground)}
+.filter-chip.active{background:var(--primary);border-color:var(--primary);color:var(--primary-foreground)}
+.media-button{display:block;width:100%;padding:0;border:none;background:none;position:relative;cursor:zoom-in}
+.media-button img{display:block;width:100%}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.video-item.portrait{max-width:460px;justify-self:center;width:100%}
+.video-frame{position:relative}
+.video-play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.video-play svg{width:64px;height:64px;color:#fff;background:rgba(20,20,20,.55);border-radius:999px;padding:16px;transition:transform .2s}
+.media-button:hover .video-play svg{transform:scale(1.08)}
+.video-duration{position:absolute;right:12px;bottom:12px;background:rgba(20,20,20,.7);color:#fff;padding:4px 9px}
+.video-note{color:var(--muted-foreground);margin-top:18px}
+.media-viewer{position:fixed;inset:0;z-index:70;background:rgba(10,10,10,.92);display:grid;place-items:center;padding:32px}
+.media-viewer-inner{max-width:min(1100px,100%);display:flex;flex-direction:column;gap:14px}
+.media-viewer-inner img,.media-viewer-inner video{max-width:100%;max-height:78dvh;display:block;margin-inline:auto;object-fit:contain}
+.media-viewer-meta{display:flex;justify-content:space-between;gap:20px;color:var(--muted-foreground)}
+.media-viewer-close{position:absolute;top:18px;right:18px;background:rgba(20,20,20,.6);border:1px solid var(--border);color:#fff;width:44px;height:44px;display:grid;place-items:center}
+.media-viewer-close:hover{color:var(--primary)}
+@media(max-width:760px){.video-grid{grid-template-columns:1fr}.video-item.portrait{max-width:420px}.media-viewer{padding:16px}.media-viewer-close{top:10px;right:10px}}
