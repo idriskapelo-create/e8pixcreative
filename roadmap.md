@@ -10,3 +10,8 @@
 - [x] Request badge removal (refused: requires editor access on Pro or higher).
 - [ ] Hide Lovable badge (blocked by plan/permissions).
 - [x] Prepare verified navigation changes for the requested republication.
+- [x] Add curated real-work photo gallery with enlarged viewer (uploaded photos + videos).
+- [x] Add finished-video showcase with posters and playback controls.
+- [x] Finish upload folders (Photos / Videos / Floor plans / Panorama) with folder filters and video uploads.
+- [ ] Verify gallery, viewer and video playback in the preview.
+- [ ] Publish only after the user approves the upgrade.
