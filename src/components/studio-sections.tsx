@@ -11,6 +11,33 @@ import dusk from '@/assets/canva-27.jpg';
 import stairs from '@/assets/canva-15.jpg';
 import dining from '@/assets/canva-21.jpg';
 export function Hero(){return <><section className="hero site-width"><div className="hero-grid"><div><div className="eyebrow micro">Property visuals, sharpened</div><h1><span className="sr-only">Professional real estate photo and video editing: </span>We edit.<em>You impress.</em></h1><p className="hero-copy">From raw frames to finished photos and film — a listing buyers can already picture themselves in. Precise, atmospheric post-production for agents who know presentation moves property.</p><div className="hero-actions"><Button variant="studio" asChild><Link to="/contact" search={{package:'custom'}}>Make an impression <ArrowUpRight/></Link></Button><Button variant="studioGhost" asChild><Link to="/work">See the difference <ArrowDown/></Link></Button></div></div><div className="hero-art"><HeroArt/></div></div><div className="hero-footer micro"><span>Serving agents, teams & studios</span><span>Scroll to explore ↓</span><span>Based in the details</span></div></section><section className="stat-band"><div className="site-width stat-inner"><p>Great photography gets attention. Great post-production gets the showing.</p><div className="stats">{[['24h','Typical first delivery'],['11k+','Frames refined'],['4.9/5','Agent rating']].map(([n,l])=><div key={n}><div className="stat-number">{n}</div><div className="micro stat-label">{l}</div></div>)}</div></div></section></>}
+// Live 3D hero art: pointer moves tilt the layered image, label and caption;
+// an idle float and sheen keep it moving on its own. Off for touch and reduced motion.
+function HeroArt() {
+  const tiltRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = tiltRef.current;
+    if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce), (hover: none)').matches) return;
+    let rx = 0, ry = 0, tx = 0, ty = 0, raf = 0;
+    const onMove = (e: PointerEvent) => {
+      const r = el.getBoundingClientRect();
+      const visible = r.bottom > 0 && r.top < window.innerHeight;
+      ty = visible ? ((e.clientX - r.left) / r.width - 0.5) * 14 : 0;
+      tx = visible ? ((e.clientY - r.top) / r.height - 0.5) * -10 : 0;
+    };
+    const tick = () => {
+      rx += (tx - rx) * 0.06;
+      ry += (ty - ry) * 0.06;
+      el.style.transform = `perspective(1100px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`;
+      raf = requestAnimationFrame(tick);
+    };
+    window.addEventListener('pointermove', onMove);
+    raf = requestAnimationFrame(tick);
+    return () => { window.removeEventListener('pointermove', onMove); cancelAnimationFrame(raf); };
+  }, []);
+  return <div className="hero-art-float"><div className="hero-art-3d" ref={tiltRef}><img src={house} alt="House exterior at dusk prepared for a property listing" fetchPriority="high"/><div className="hero-art-sheen" aria-hidden="true"/><div className="hero-art-label">A considered<br/>first impression.</div><span className="photo-caption micro">8PIX / CREATIVE</span></div></div>;
+}
 export function SectionHeading({number,label,title,description}:{number:string;label:string;title:React.ReactNode;description?:string}){return <div className="section-heading"><div><div className="section-kicker micro"><span>{number}</span><span>{label}</span></div><h2 className="display-title">{title}</h2></div>{description&&<p className="section-intro">{description}</p>}</div>}
 export function ServicesSection(){const services=[{n:'01',name:'Interior edits',copy:'Clean, correct, and compose every room so buyers feel the space before they ever step inside.',tags:['Natural window pulls','Perspective correction','Styling & decluttering'],image:interior},{n:'02',name:'Exterior edits',copy:'Make the approach, facade, and setting work harder with precise color, sky, and landscape refinement.',tags:['Sky & weather replacement','Lawn and landscape polish','Architectural detail'],image:exterior},{n:'03',name:'Day-to-dusk',copy:'Turn one well-framed capture into the image that stops the scroll and anchors the entire listing.',tags:['Believable twilight light','Window illumination','Atmosphere with restraint'],image:dusk}];return <section className="section paper"><div className="site-width"><SectionHeading number="01" label="The service" title={<>More than <em>retouching.</em></>} description="Our job is not to make a property look different. It is to make the right things impossible to miss."/><div className="service-list">{services.map(s=><article className="service-item" key={s.n}><span className="service-number">{s.n}</span><h3>{s.name}</h3><p>{s.copy}</p><div className="service-tags">{s.tags.map(t=><div key={t}>{t}</div>)}</div><img src={s.image} alt={`${s.name} property editing example`} loading="lazy"/></article>)}</div><p className="package-note">8pix Creative provides professional real estate photo and video editing services. Photography is not included.</p></div></section>}
 export function WorkSection(){return <section className="section"><div className="site-width"><SectionHeading number="02" label="Selected frames" title={<>The listing <em>starts here.</em></>} description="A few examples of how restraint, light, and a sharp eye change the read of a room. Click any photo to view it enlarged."/><CuratedPhotos/><div className="work-cta"><span>A sharper edit changes the story.</span><Button variant="studioGhost" asChild><Link to="/contact" search={{package:'custom'}}>See what we can do <ArrowUpRight/></Link></Button></div></div></section>}
