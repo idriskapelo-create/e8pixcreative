@@ -13,5 +13,6 @@
 - [x] Add curated real-work photo gallery with enlarged viewer (uploaded photos + videos).
 - [x] Add finished-video showcase with posters and playback controls.
 - [x] Finish upload folders (Photos / Videos / Floor plans / Panorama) with folder filters and video uploads.
-- [ ] Verify gallery, viewer and video playback in the preview.
-- [ ] Publish only after the user approves the upgrade.
+- [x] Verify gallery, viewer and video playback in the preview.
+- [x] Add a 3D, live hero on the homepage (pointer tilt, idle float, moving sheen).
+- [ ] Publish everything live (user requested go-live; publish in progress).
