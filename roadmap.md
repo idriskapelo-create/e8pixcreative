@@ -15,4 +15,6 @@
 - [x] Finish upload folders (Photos / Videos / Floor plans / Panorama) with folder filters and video uploads.
 - [x] Verify gallery, viewer and video playback in the preview.
 - [x] Add a 3D, live hero on the homepage (pointer tilt, idle float, moving sheen).
-- [ ] Publish everything live (user requested go-live; publish in progress).
+- [x] Publish everything live (verified live at https://e8pixcreative.lovable.app).
+- [ ] Investigate why the user reports videos missing on the live site (check live pages and 8pixcreatives.org).
+- [ ] Email the owner on every project inquiry (blocked: needs a verified sender email domain).
