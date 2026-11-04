@@ -16,5 +16,5 @@
 - [x] Verify gallery, viewer and video playback in the preview.
 - [x] Add a 3D, live hero on the homepage (pointer tilt, idle float, moving sheen).
 - [x] Publish everything live (verified live at https://e8pixcreative.lovable.app).
-- [ ] Investigate why the user reports videos missing on the live site (check live pages and 8pixcreatives.org).
+- [x] Investigate why the user reports videos missing on the live site (custom domain did not serve CDN media; bundled all portfolio media as real files and re-verified playback).
 - [ ] Email the owner on every project inquiry (blocked: needs a verified sender email domain).
