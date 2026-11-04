@@ -1,13 +1,15 @@
 // Curated portfolio media supplied directly by the studio. Every entry is real,
 // finished 8pix Creative work — no stock imagery, no invented comparisons.
-import dayRowhouse from '@/assets/portfolio/portfolio-exterior-day.jpg.asset.json';
-import duskRowhouse from '@/assets/portfolio/portfolio-exterior-dusk.jpg.asset.json';
-import porchDusk from '@/assets/portfolio/portfolio-porch-dusk.jpg.asset.json';
-import townhouse from '@/assets/portfolio/portfolio-townhouse.jpg.asset.json';
-import walkthroughVideo from '@/assets/portfolio/portfolio-video-walkthrough.mp4.asset.json';
-import reelVideo from '@/assets/portfolio/portfolio-video-reel.mp4.asset.json';
-import walkthroughPoster from '@/assets/portfolio/poster-video-walkthrough.jpg.asset.json';
-import reelPoster from '@/assets/portfolio/poster-video-reel.jpg.asset.json';
+// Media ships as regular files inside the project so it loads on every domain
+// (CDN pointer URLs were not reachable from the custom domain).
+import dayRowhouse from '@/assets/portfolio/portfolio-exterior-day.jpg';
+import duskRowhouse from '@/assets/portfolio/portfolio-exterior-dusk.jpg';
+import porchDusk from '@/assets/portfolio/portfolio-porch-dusk.jpg';
+import townhouse from '@/assets/portfolio/portfolio-townhouse.jpg';
+import walkthroughVideo from '@/assets/portfolio/portfolio-video-walkthrough.mp4';
+import reelVideo from '@/assets/portfolio/portfolio-video-reel.mp4';
+import walkthroughPoster from '@/assets/portfolio/poster-video-walkthrough.jpg';
+import reelPoster from '@/assets/portfolio/poster-video-reel.jpg';
 
 export type CuratedPhoto = { kind: 'photo'; url: string; category: string; title: string; alt: string };
 export type CuratedVideo = { kind: 'video'; url: string; poster: string; category: string; title: string; alt: string; orientation: 'square' | 'portrait'; duration: string };
