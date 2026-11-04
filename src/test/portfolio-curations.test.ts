@@ -6,7 +6,7 @@ describe('curated portfolio media', () => {
   expect(curatedPhotoCategories).toEqual(['Day-to-dusk', 'Exterior editing']);
   expect(curatedPhotos).toHaveLength(4);
   for (const photo of curatedPhotos) {
-   expect(photo.url).toMatch(/^\/__l5e\/assets-v1\/.+/);
+   expect(photo.url).toMatch(/portfolio-(exterior-day|exterior-dusk|porch-dusk|townhouse)\.jpg$/);
    expect(photo.alt.length).toBeGreaterThan(10);
    expect(photo.title.length).toBeGreaterThan(2);
   }
