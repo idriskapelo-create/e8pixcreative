@@ -18,3 +18,4 @@
 - [x] Publish everything live (verified live at https://e8pixcreative.lovable.app).
 - [x] Investigate why the user reports videos missing on the live site (custom domain did not serve CDN media; bundled all portfolio media as real files and re-verified playback).
 - [ ] Email the owner on every project inquiry (blocked: needs a verified sender email domain).
+- [ ] Republish all latest changes to production and confirm the GitHub sync carries them (repo idriskapelo-create/e8pixcreative).
